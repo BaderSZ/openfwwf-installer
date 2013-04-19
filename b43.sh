@@ -13,7 +13,7 @@ sudo apt-get install flex bison debhelper wget # build-essential
 mkdir $FWDIR
 cd $FWDIR
 
-## echo "Downloading needed packages, from the interwebz"
+echo "Downloading needed packages, from the interwebz"
 ## wget     http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2
 ## wget     http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
 wget     http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
@@ -27,8 +27,8 @@ wget     http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0
 ## sudo make install
 ## cd ..
 
-sudo dpkg -i openfwwf_5.2-0trisquel3_all.deb
 sudo dpkg -i b43-asm_0~20080619-0+c1.aptosid.9trisquel1_amd64.deb
+sudo dpkg -i openfwwf_5.2-0trisquel3_all.deb
 
 ## sudo b43-fwcutter -w $FWDIR_PROP broadcom-wl-5.100.138/linux/wl_apsta.o
 
