@@ -1,0 +1,11 @@
+This is an install script for deb-based GNU/Linux systems. It uses the OpenFWWF firmware to get the b43 card functioning.
+
+Deb packages are downloaded from the trisquel repositories.
+
+Note: If you are using this script to install the firmware for the b4331 chipset (2011 Macbooks), please use the necessary script, which is the b4331.sh. If you do, the installed packages are not 100% free software, since Broadcom's proprietary firmware is needed and the free firmware is not 100% functional for this card.
+
+b43.sh has been tested on: Broadcom's 4306 and 4318, on kernel 2.6.27-rc5.
+
+I have personally tested the b4331.sh script on 3.8.* linux-libre, but it should work on older kernels.
+
+Check http://www.ing.unibs.it/~openfwwf/ for more details.
