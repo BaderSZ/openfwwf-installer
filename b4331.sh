@@ -9,7 +9,7 @@ FW_INSTALL_DIR="/lib/firmware/b43-open/"
 
 echo "Accessing apt-get to install the neccessary utilities"
 
-sudo apt-get install flex bison debhelper wget build-essential make
+sudo apt-get install flex bison debhelper wget build-essential make binutils
 
 mkdir $FWDIR
 cd $FWDIR
