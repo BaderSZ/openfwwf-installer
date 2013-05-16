@@ -29,9 +29,7 @@ if echo $ARCH64 | grep -q $ARCH
 then
 echo "Architecture detected: x86_64"
 wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_amd64.deb
-fi
-
-if echo $ARCH32 | grep -q $ARCH
+elif echo $ARCH32 | grep -q $ARCH
 then
 echo "Architecture detected: i386"
 wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_i386.deb
