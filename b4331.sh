@@ -6,7 +6,7 @@
 FWDIR="./firmware"
 FWDIR_PROP="./firmware/proprietary"
 FW_INSTALL_DIR="/lib/firmware/b43-open/"
-
+ARCH=$(uname -p)
 
 echo "Accessing apt-get to install the neccessary utilities"
 
@@ -21,7 +21,20 @@ echo "Downloading needed packages, from the internet..."
 wget     http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2
 wget     http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
 wget     http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
-wget     http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c1.aptosid.9trisquel1_amd64.deb
+
+## Detect Architecture and download specific package
+if echo "x86_64" | grep -q $ARCH
+then
+echo "Architecture detected: x86_64"
+wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_amd64.deb
+fi
+
+if echo "i386" | grep -q $ARCH
+then
+echo "Architecture detected: i386"
+wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_i386.deb
+fi
+
 
 tar xjf b43-fwcutter-017.tar.bz2
 tar xjf broadcom-wl-5.100.138.tar.bz2
@@ -35,7 +48,7 @@ cd ..
 
 
 ## openfwwf depends on b43-asm, install both
-sudo dpkg -i b43-asm_0~20080619-0+c1.aptosid.9trisquel1_amd64.deb
+sudo dpkg -i b43-asm*.deb
 sudo dpkg -i openfwwf_5.2-0trisquel3_all.deb
 
 
