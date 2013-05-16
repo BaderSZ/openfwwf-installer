@@ -7,6 +7,8 @@ FWDIR="./firmware"
 FWDIR_PROP="./firmware/proprietary"
 FW_INSTALL_DIR="/lib/firmware/b43-open/"
 ARCH=$(uname -p)
+ARCH32="i386"
+ARCH64="x86_64"
 
 echo "Accessing apt-get to install the neccessary utilities"
 
@@ -23,13 +25,13 @@ wget     http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
 wget     http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
 
 ## Detect Architecture and download specific package
-if echo "x86_64" | grep -q $ARCH
+if echo $ARCH64 | grep -q $ARCH
 then
 echo "Architecture detected: x86_64"
 wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_amd64.deb
 fi
 
-if echo "i386" | grep -q $ARCH
+if echo $ARCH32 | grep -q $ARCH
 then
 echo "Architecture detected: i386"
 wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_i386.deb
