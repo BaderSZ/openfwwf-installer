@@ -20,9 +20,9 @@ cd $FWDIR
 
 echo "Downloading needed packages, from the internet..."
 
-wget     http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2
-wget     http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2
-wget     http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
+wget- -c  http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2 \
+      http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2 \
+      http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
 
 ## Detect Architecture and download specific package
 if echo $ARCH64 | grep -q $ARCH
@@ -48,8 +48,7 @@ cd ..
 
 
 ## openfwwf depends on b43-asm, install both
-sudo dpkg -i b43-asm*.deb
-sudo dpkg -i openfwwf_5.2-0trisquel3_all.deb
+sudo dpkg -i b43-asm*.deb openfwwf_5.2-0trisquel3_all.deb
 
 
 ## extract the proprietary firmware to the temporary directory.
