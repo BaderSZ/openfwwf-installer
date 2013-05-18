@@ -2,7 +2,7 @@ This is an install script for deb-based GNU/Linux systems. It uses the OpenFWWF 
 
 Deb packages are downloaded from the trisquel repositories.
 
-If you are using this script to install the firmware for the b4331 chipset (2011 Macbooks, and other devices), the installed packages are not 100% free software, since some files are needed from Broadcom's proprietary firmware and the free firmware is not 100% functional for this card.
+The installed packages are not 100% free software, since some files are needed from Broadcom's proprietary firmware and the free firmware is not 100% functional.
 
 I have personally tested the b4331.sh script on 3.8.* linux-libre, but it should work on older kernels.
 

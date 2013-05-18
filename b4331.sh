@@ -24,6 +24,7 @@ wget- -c  http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2 \
       http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2 \
       http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
 
+
 ## Detect Architecture and download specific package
 if echo $ARCH64 | grep -q $ARCH
 then
