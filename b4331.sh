@@ -1,7 +1,30 @@
 #!/bin/sh
 
-## Bader Zaidan - github.com/BaderSZ
+##      Bader S. Zaidan - github.com/BaderSZ
 ## OpenFWWF installer script for deb based systems
+
+## The MIT License (MIT)
+## 
+## Copyright (c) 2013 Bader Senussi Zaidan
+## 
+## Permission is hereby granted, free of charge, to any person obtaining a copy
+## of this software and associated documentation files (the "Software"), to deal
+## in the Software without restriction, including without limitation the rights
+## to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+## copies of the Software, and to permit persons to whom the Software is
+## furnished to do so, subject to the following conditions:
+## 
+## The above copyright notice and this permission notice shall be included in
+## all copies or substantial portions of the Software.
+## 
+## THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+## IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+## FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+## AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+## LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+## OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+## THE SOFTWARE.
+
 
 FWDIR="./firmware"
 FWDIR_PROP="./firmware/proprietary"
@@ -28,12 +51,12 @@ wget- -c  http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2 \
 ## Detect Architecture and download specific package
 if echo $ARCH64 | grep -q $ARCH
 then
-echo "Architecture detected: x86_64"
-wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_amd64.deb
+  echo "Architecture detected: x86_64"
+  wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_amd64.deb
 elif echo $ARCH32 | grep -q $ARCH
 then
-echo "Architecture detected: i386"
-wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_i386.deb
+  echo "Architecture detected: i386"
+  wget http://mirror.fsf.org/trisquel/pool/main/b/b43-asm/b43-asm_0~20080619-0+c0.sidux.5_i386.deb
 fi
 
 
