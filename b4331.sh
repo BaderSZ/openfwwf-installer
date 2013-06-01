@@ -76,13 +76,15 @@ sudo dpkg -i b43-asm*.deb openfwwf_5.2-0trisquel3_all.deb
 
 
 ## extract the proprietary firmware to the temporary directory.
-sudo b43-fwcutter -w $FWDIR_PROP broadcom-wl-5.100.138/linux/wl_apsta.o
+cd ..
+mkdir $FWDIR_PROP
+sudo b43-fwcutter -w $FWDIR_PROP firmware/broadcom-wl-5.100.138/linux/wl_apsta.o
 
 
 ## copy only the needed proprietary files. To the firmware directory.
-sudo cp $FWDIR_PROP/ht0initvals29.fw    $FW_INSTALL_DIR
-sudo cp $FWDIR_PROP/ht0bsinitvals29.fw  $FW_INSTALL_DIR
-sudo cp $FWDIR_PROP/ucode29_mimo.fw     $FW_INSTALL_DIR
+sudo cp $FWDIR_PROP/b43/ht0initvals29.fw    $FW_INSTALL_DIR
+sudo cp $FWDIR_PROP/b43/ht0bsinitvals29.fw  $FW_INSTALL_DIR
+sudo cp $FWDIR_PROP/b43/ucode29_mimo.fw     $FW_INSTALL_DIR
 
 
 echo "-------------------------"
