@@ -43,7 +43,7 @@ cd $FWDIR
 
 echo "Downloading needed packages, from the internet..."
 
-wget- -c  http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2 \
+wget -c  http://bues.ch/b43/fwcutter/b43-fwcutter-017.tar.bz2 \
       http://www.lwfinger.com/b43-firmware/broadcom-wl-5.100.138.tar.bz2 \
       http://mirror.fsf.org/trisquel/pool/main/o/openfwwf/openfwwf_5.2-0trisquel3_all.deb
 
